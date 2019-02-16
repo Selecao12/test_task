@@ -7,6 +7,7 @@
     <meta name="author" content="">
     <title>Главная</title>
     <link rel="stylesheet" href="/template/css/main.css">
+    <link rel="stylesheet" href="/template/font-awesome/css/font-awesome.min.css">
     <script src="/template/js/jquery-3.3.1.min.js"></script>
 </head><!--/head-->
 

@@ -1,0 +1,82 @@
+.main {
+    display: flex;
+    justify-content: center;
+    min-width: 500px;
+}
+
+.wrapper {
+
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form_caption {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.form_field:last-child {
+    padding-left: 2px;
+}
+
+.table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.table_caption {
+    display: flex;
+    border: 1px solid lightgrey;
+    font-weight: bold;
+}
+
+.table_content {
+    border: 1px solid lightgrey;
+    border-top: none;
+}
+
+.table_content::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;  /* опционально */
+}
+
+.table_row {
+    display: flex;
+    border-bottom: 1px solid lightgrey;
+}
+
+.table_row:last-child {
+    border-bottom: none;
+}
+
+.table_ceil {
+    display: flex;
+    flex: 3;
+    border-right: 1px solid lightgrey;
+    justify-content: center;
+}
+
+.table_ceil:last-child {
+    border-right: none;
+}
+
+.table_ceil_id {
+    flex: 1;
+}
+
+.table_ceil_delete_button {
+    flex: 1;
+}
+
+
+
+
+

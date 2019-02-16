@@ -2,7 +2,7 @@
 
 return array(
     'host' => 'localhost',
-    'dbname' => 'telegram_auth',
+    'dbname' => 'test_task',
     'user' => 'root',
     'password' => '',
 );

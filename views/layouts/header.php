@@ -12,10 +12,4 @@
 
 <body>
 <div class="main">
-    <div class="header">
-        <div class="title">
-            Двухфакторная авторизация через telegram-bot
-        </div>
-    </div>
-    <div class="content">
 

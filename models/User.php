@@ -15,7 +15,11 @@ class User
         $result->bindParam(':firstname', $firstname, PDO::PARAM_STR);
         $result->bindParam(':patronymic', $patronymic, PDO::PARAM_STR);
 
-        return $result->execute();
+        if ($result->execute()) {
+            return $db->lastInsertId();
+        } else {
+            return false;
+        }
     }
 
     // удаляет пользователя
@@ -36,7 +40,7 @@ class User
     {
         $db = Db::getConnection();
 
-        $sql = "SELECT FROM user ORDER BY id DESC";
+        $sql = "SELECT * FROM user ORDER BY id DESC";
         $result = $db->query($sql);
 
         $users = $result->fetchAll(PDO::FETCH_ASSOC);
@@ -51,6 +55,9 @@ class User
         if (preg_match('/[^[:alpha:]-]/u', $lastname) || preg_match('/[^[:alpha:]-]/u', $firstname) ||
             preg_match('/[^[:alpha:]-]/u', $patronymic)) {
 
+            $result = false;
+        }
+        if (mb_strlen($lastname) == 0 || mb_strlen($firstname) == 0) {
             $result = false;
         }
 

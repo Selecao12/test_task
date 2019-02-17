@@ -13,7 +13,7 @@
             <div class="form_field">
                 <input type="text" placeholder="Отчество" id="id_form_patronymic">
             </div>
-            <div class="form_field" id="id_form_add_button">
+            <div class="form_field" id="id_form_add_button" onclick="addUser()">
                 <div>
                     <i class="fa fa-plus" style="color: green"></i>
                 </div>
@@ -39,220 +39,39 @@
                         Отчество
                     </div>
                 </div>
-                <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
+                <div class="table_ceil table_ceil_delete_button">
                     Удалить
                 </div>
             </div>
             <div class="table_content">
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
+                <?php foreach ($user_rows as $row): ?>
+                    <div class="table_row" id="<?=$row['id'] ?>">
+                        <div class="table_ceil table_ceil_id">
+                            <div>
+                                <?=$row['id'] ?>
+                            </div>
+                        </div>
+                        <div class="table_ceil table_ceil_lastname">
+                            <div>
+                                <?=$row['lastname'] ?>
+                            </div>
+                        </div>
+                        <div class="table_ceil table_ceil_firstname">
+                            <div>
+                                <?=$row['firstname'] ?>
+                            </div>
+                        </div>
+                        <div class="table_ceil table_ceil_patronymic">
+                            <div>
+                                <?=$row['patronymic'] ?>
+                            </div>
+                        </div>
+                        <div class="table_ceil table_ceil_delete_button" onclick="deleteUser(<?=$row['id'] ?>)">
+                            <i class="fa fa-minus" style="color: red"></i>
                         </div>
                     </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
-                <div class="table_row">
-                    <div class="table_ceil table_ceil_id">
-                        <div>1</div>
-                    </div>
-                    <div class="table_ceil table_ceil_lastname">
-                        <div>
-                            Никитин
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_firstname">
-                        <div>
-                            Виталий
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_patronymic">
-                        <div>
-                            Сергеевич
-                        </div>
-                    </div>
-                    <div class="table_ceil table_ceil_delete_button" id="id_table_row_id">
-                        <i class="fa fa-minus" style="color: red"></i>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
-
         </div>
     </div>
 <?php include ROOT . '/views/layouts/footer.php'; ?>

@@ -14,11 +14,20 @@ class UserController
         // Присутствуют недопустимые символы
         if (!User::checkUserName($lastname, $firstname, $patronymic)) {
 
-            echo json_encode(['result' => 'false']);
+            echo json_encode(['result' => 'error']);
+            return false;
+        }
+
+        // Успешное добавление в БД
+        $lastInsertedId = User::addUser($lastname, $firstname, $patronymic);
+        if (!$lastInsertedId) {
+            echo json_encode(['result' => 'error']);
             return false;
         }
 
         echo json_encode([
+            'result' => 'ok',
+            'id' => $lastInsertedId,
             'lastname' => $lastname,
             'firstname' => $firstname,
             'patronymic' => $patronymic
@@ -36,25 +45,16 @@ class UserController
 
         if (!$result) {
             echo json_encode([
-                'result' => 'false'
+                'result' => 'error'
             ]);
 
             return false;
         }
 
         echo json_encode([
+            'result' => 'ok',
             'id' => $id
         ]);
-
-        return true;
-    }
-
-    // fixme Удалить?
-    // возвращает пользователей
-    public function actionGetUsers()
-    {
-        $users = User::getUsers();
-        echo json_encode($users);
 
         return true;
     }
